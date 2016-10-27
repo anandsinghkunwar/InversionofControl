@@ -27,24 +27,15 @@ class Engine(object):
                 self.RenderFrame(frame)
             if not self.Loop:
                 break
+def main():
+    engine = Engine()
+    
+    ROFLCopter1 = open('roflcopter1', 'r').read()
+    ROFLCopter2 = open('roflcopter2', 'r').read()
+    
+    engine.AddFrame(Frame(ROFLCopter1))
+    engine.AddFrame(Frame(ROFLCopter2))
+    engine.Render()
 
-engine = Engine()
-ROFLCopter1 = '''
-          ROFL:ROFL:LOL:
-                    _^___
-           L    __/   [] \    
-           O ===__        \ 
-           L      \________]
-                    I   I
-                   --------/'''
-ROFLCopter2 = '''
-                   :LOL:ROFL:ROFL
-                    _^___
-                __/   [] \    
-          LOL===__        \ 
-                  \________]
-                    I   I
-                   --------/'''
-engine.AddFrame(Frame(ROFLCopter1))
-engine.AddFrame(Frame(ROFLCopter2))
-engine.Render()
+if __name__ == '__main__':
+    main()
